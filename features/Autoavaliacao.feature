@@ -1,4 +1,4 @@
-Scenario: Preenchimento correto da auto-avaliação  (GUI)
+Scenario: Preenchimento correto da auto-avaliação 
 Given O aluno “Matheus dos Santos” ainda não preencheu sua auto-avaliação da disciplina “ESS”
 And A disciplina “ESS” possui “4” metas
 And Ele está na página “Auto-avaliação” para a disciplina “ESS"
