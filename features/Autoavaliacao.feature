@@ -22,3 +22,10 @@ And Seleciona a opção de “Salvar”
 Then Ele vê uma mensagem de erro.
 And Ele segue na página de “Auto-avaliação” da disciplina “ESS”
 
+Scenario: Listar discrepancias sem alunos discrepantes 
+Given O aluno “Matheus dos Santos” preencheu sua auto-avaliação da disciplina “ESS” com “MA,MA,MA,MA,MA” e o professor o avaliou com “MA,MA,MA,MA,MPA”
+And O aluno “Lucas dos Anjos” preencheu sua auto-avaliação da disciplina “ESS” com “MPA,MPA,MPA,MPA,MPA” e o professor o avaliou com “MA,MA,MA,MA,MA”
+And O aluno “Kevin dos Fernandes” preencheu sua auto-avaliação da disciplina “ESS” com “MA,MA,MA,MA,MA” e o professor o avaliou com “MA,MA,MA,MA,MA”
+And Apenas estes alunos preencheram a auto-avaliação
+When O professor solicita “Lista de Alunos com auto-avaliação discrepante”
+Then Ele vê uma lista vazia
